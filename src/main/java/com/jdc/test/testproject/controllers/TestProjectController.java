@@ -1,5 +1,6 @@
 package com.jdc.test.testproject.controllers;
 
+import com.jdc.test.testproject.dto.TestDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestProjectController {
     @GetMapping("/test")
     public String test(){
-        return "Hello World";
+        return TestDto.builder().greeting("Wabba laba dub dub").build().getGreeting();
+        
     }
 }
